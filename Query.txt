@@ -1,0 +1,40 @@
+CREATE TABLE Pengguna(
+	id_user VARCHAR(50) NOT NULL,
+    nama_user VARCHAR(50),
+    email VARCHAR(50),
+    penyakit VARCHAR(50)
+);
+
+ALTER TABLE Pengguna ADD CONSTRAINT Pengguna_PK PRIMAR YKEY (id_user);
+
+CREATE TABLE Obat(
+	id_obat VARCHAR(50) NOT NULL,
+    nama_obat VARCHAR(50),
+    dosis VARCHAR(50)    
+);
+
+ALTER TABLE Obat ADD CONSTRAINT Obat_PK PRIMARY KEY (id_obat);
+
+CREATE TABLE Pembayaran(
+	id_obat VARCHAR(50) NOT NULL,
+    id_user VARCHAR(50),    
+    nomor_bon int(10)
+);
+
+ALTER TABLE Pembayaran ADD CONSTRAINT Pembayaran_FK1 FOREIGN KEY (id_user) REFERENCES Pengguna (id_user);
+ALTER TABLE Pembayaran ADD CONSTRAINT Pembayaran_FK2 FOREIGN KEY (id_obat) REFERENCES Obat (id_obat);
+
+
+INSERT INTO Pengguna VALUES ('001','Yanto','Yanto@gmail.com','Meriang');
+INSERT INTO Obat VALUES ('X01','Ultraflu','3 X sehari');
+INSERT INTO Pembayaran VALUES ('X01','001','01');
+
+SELECT * from Pengguna;
+SELECT * from Obat;
+SELECT * from Pembayaran;
+
+
+
+
+
+
