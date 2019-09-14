@@ -63,18 +63,18 @@
               <div class="modal-body">
                 <div class="Username" style="border:2px solid #7D7D7D; border-left:10px solid #F35410;">
                   <div class="formgroup">
-                    <label for="Nama" style="float:left; margin-left:10px;">Username</label>
+                    <label for="username07" style="float:left; margin-left:10px;">Username</label>
                     <br>
-                    <input id="Nama" type="text" class="form" name="nama1" placeholder="Masukan Nama anda" required
+                    <input id="username07" type="text" class="form" name="nama1" placeholder="Masukan Nama anda" required
                     style="border:none; color:#F35410; width:96%; margin-left:10px;">
                   </div>
                 </div>
                 <br>
                 <div class="Pass" style="border:2px solid #7D7D7D; border-left:10px solid #F35410;">
                   <div class="formgroup">
-                    <label for="pwd" style="float:left; margin-left:10px;">Password</label>
+                    <label for="pass07" style="float:left; margin-left:10px;">Password</label>
                     <br>
-                    <input type="password" class="form" id="pwd" name="pwd" placeholder="Masukan Password anda" required
+                    <input type="password" class="form" id="pass07" name="pwd" placeholder="Masukan Password anda" required
                     style="border:none; color:#F35410; width:96%; margin-left:10px;">
                   </div>
                 </div>
@@ -83,7 +83,7 @@
 
               <!-- Modal footer -->
               <div class="modal-footer" style="border:none">
-                <button type="submit" class="btn" style="background-color:#F35410"><span style="color:white">Login</span></button>
+                <button type="submit" onClick="login()" class="btn" style="background-color:#F35410"><span style="color:white">Login</button>
               </div>
 
             </div>
@@ -203,5 +203,17 @@
       </div>
 
     </div>
+    <script type="text/javascript">
+      function login(){
+        var username = document.getElementById("username07").value;
+        var pass = document.getElementById("pass07").value;
+
+        if (username!="admin" && pass != "admin") {
+          window.alert("Harus daftar dulu!");
+        }else{
+          window.alert("Selamat datang Admin!");          
+        }
+      }
+    </script>
   </body>
 </html>
